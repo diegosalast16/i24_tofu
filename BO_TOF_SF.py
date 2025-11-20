@@ -4,9 +4,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
-sf = Salesforce(username='diego.trejo@quintoandar.com.br',
-                password='C@ggr36yE!hqLNT',
-                security_token='rMiVu1EZQBxlrL4sYKQbuJM6')
+sf = Salesforce(username='colaborador@quintoandar.com',  #<---- correo de quitoandar
+                password='contraseña',                   #<---- contrasñea 
+                security_token='token_salesforce')       #<---- token de seguridad de salesforce
 
 query_leads_history = sf.query_all(
 '''
@@ -414,6 +414,7 @@ resumen_oportunidades.to_csv('C:\\Users\\DiegoAntonioSalasTre\\Documents\\tof\\d
 
 
 ejemplo = df_leads_history[df_leads_history['Propietario'] == 'Víctor Manuel Castro']
+
 
 
 
