@@ -423,3 +423,4 @@ resumen_oportunidades.to_csv('C:\\Users\\DiegoAntonioSalasTre\\Documents\\tof\\d
 
 
 
+
