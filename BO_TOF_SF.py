@@ -83,7 +83,7 @@ WHERE AccountId IN (
 '''
 )
 
-teams = pd.read_csv('C:\\Users\\DiegoAntonioSalasTre\\Documents\\tof\\teams.csv')     
+teams = pd.read_csv('C:\\Users\\DiegoAntonioSalasTre\\Documents\\tof\\teams.csv')   #<---- archivo con los nombres de los ejecutivos comerciales y sus respectivos equipos    
                         
 df_leads_history = pd.DataFrame(query_leads_history['records'])
 df_leads_dim = pd.DataFrame(query_leads_dim['records'])
@@ -266,8 +266,6 @@ cohort_resumen = pd.concat([cohort_total, cohort_convertidos], axis=1).fillna(0)
 cohort_resumen['Convertidos'] = cohort_resumen['Convertidos'].astype(int)
 cohort_resumen['Conversión'] = cohort_resumen['Convertidos'] / cohort_resumen['Nuevos']
 
-#cohort_resumen.drop(['Periodo_dt', 'Periodo_str'], axis=1, inplace=True)
-
 resumen = df_leads_dim.groupby(['Periodo', 'Status', 'Equipo', 'Propietario', 'LeadSource']).size().rename('Prospectos').reset_index()
 
 resumen = resumen[resumen['Prospectos'] >= 1]
@@ -412,8 +410,6 @@ resumen_oportunidades = resumen_oportunidades[resumen_oportunidades['Prospectos_
 
 resumen_oportunidades.to_csv('C:\\Users\\DiegoAntonioSalasTre\\Documents\\tof\\data_oportunidades.csv', index=False)
 
-
-ejemplo = df_leads_history[df_leads_history['Propietario'] == 'Víctor Manuel Castro']
 
 
 
